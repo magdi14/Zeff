@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema; //Defining a schema to create a model in mongoose.
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema; //Defining a schema to create a model in mongoose.
 
-var user = new Schema({
+const user = new Schema({
     // here add the collection entries for your models like name, email, etc ... 
 });
 

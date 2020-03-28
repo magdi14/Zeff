@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 
 /*
-var userCtrl = require('../app/controller/UsersController');
+const userCtrl = require('../app/controller/UsersController');
 
 Then here add your endpoints for the user controller like
 

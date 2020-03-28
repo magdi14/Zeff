@@ -1,4 +1,4 @@
-var app = require('../bootstrap/app');
+const app = require('../bootstrap/app');
 
 /*
 
@@ -8,6 +8,6 @@ so if we need to import any of other npm packages we need:
 
 */
 
-app.listen(3008, function(){
-    console.log("Listening on Port 3008");
+app.listen(process.env.APP_PORT, function(){
+    console.log("Listening on Port " + process.env.APP_PORT);
 });

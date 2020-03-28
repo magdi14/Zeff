@@ -1,9 +1,10 @@
-var express  = require('express');
-var bodyParser  = require('body-parser');
-var db = require('../database/db');   //for making the connection to database
-var routes = require('../routes/router');
+const express  = require('express');
+const bodyParser  = require('body-parser');
+const dotenv = require('dotenv').config();
+const db = require('../database/db');   //for making the connection to database
+const routes = require('../routes/router');
 
-var app = express();
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

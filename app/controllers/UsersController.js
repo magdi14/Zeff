@@ -3,7 +3,7 @@ Here in the controller of your model has all of the logic you need
 
 - First you need to require your Model first from models folder
     e.g:
-        var User = require('../database/models/User');
+        const User = require('../database/models/User');
 - Then exports all your function like
     e.g:
         module.exports = {

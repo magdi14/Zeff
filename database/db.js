@@ -1,10 +1,10 @@
 /*
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 Here add your database connection then export the variable you made
 
 e.g:
-var db = mongoose.connect('mongoose://localhost:{port}/{your DB name}', { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connect('mongoose://{yr_db_Host}:{db_port}/{yr_db_name}', { useNewUrlParser: true, useUnifiedTopology: true });
 db connection created successfully!
 
 PS: 
