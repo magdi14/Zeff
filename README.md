@@ -1,5 +1,5 @@
 <img src="https://bit.ly/3aregLh" width="200" height="200">
-A simple MVC structure with node.js, it makes developing REST API's very easy for those guys who have experience in Laravel/Lumen projects structure. also it prevents the developer from writing a unreadable, unstructured, difficult-to-maintain source code *spagettie code* which's a problem i faced when i first started coding with node.js.
+A simple MVC structure with node.js, it makes developing REST API's very easy for those guys who have experience in Laravel/Lumen projects structure. also it prevents the developer from writing a unreadable, unstructured, difficult-to-maintain source code`spaghetti-code` which's a problem i faced when i first started coding with node.js.
 
 ## Getting Started
 You can start using zeff structure via multiple ways:
