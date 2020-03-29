@@ -1,6 +1,6 @@
 const express  = require('express');
 const bodyParser  = require('body-parser');
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv').config();  //setting up the app environment
 const db = require('../database/db');   //for making the connection to database
 const routes = require('../routes/router');
 
