@@ -1,7 +1,20 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const permissionsCtrl = require("../app/controllers/PermissionsController");
+const rolesCtrl = require("../app/controllers/RolesController");
 
+//Permissions
+router.route("/permissions").get(permissionsCtrl.index);
+router.route("/permissions/:id").get(permissionsCtrl.show);
+router.route("/permissions").post(permissionsCtrl.store);
+router.route("/permissions/:id").delete(permissionsCtrl.destroy);
 
+//Roles
+router.route("/roles").get(rolesCtrl.index);
+router.route("/roles").post(rolesCtrl.store);
+router.route("/roles/:id").get(rolesCtrl.show);
+router.route("/roles/:id").delete(rolesCtrl.destroy);
+router.route("/roles/:id").put(rolesCtrl.update);
 /*
 const userCtrl = require('../app/controller/UsersController');
 
@@ -13,7 +26,6 @@ router.route('users/:id').get(userCtrl.show)  here show is a fn to get a user fr
 
 PS: you can accsess the id provided in url via request by params attribute.
 */
-
 
 /* 
 After adding all your routes you must to export the router variable
