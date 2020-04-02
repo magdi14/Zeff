@@ -64,7 +64,7 @@ Project Structure Conventions
     ├── routes                              # folder that has all routes in your app.
     │   └── router.js                       # here you can define the routes and endpoints for the modules you've created.
     │
-    ├── .env_example                        # file that has all the configrations keys of your app like db_name, db_user, your main port all of |                                         these variables and keys.(you must create a `.env` file from this one). │                                         
+    ├── .env_example                        # file that has all the configrations keys of your app like db_name, db_user, your main port     |
     │
     ├── package.json                        # file of all your app info and dependencies.
     │
