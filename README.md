@@ -1,7 +1,7 @@
 <img src="https://bit.ly/3aregLh" width="200" height="200">
 
 
-A simple MVC structure with node.js, it makes developing REST API's very easy for those guys who have experience in Laravel/Lumen projects structure. also it prevents the developer from writing a unreadable, unstructured, difficult-to-maintain source code `spaghetti-code` which's a problem i faced when i first started coding with node.js.
+A simple MVC structure with node.js, it makes building REST API's very easy for those guys who have experience in Laravel/Lumen projects structure. also it prevents the developer from writing an unreadable, unstructured, difficult-to-maintain source code `spaghetti-code` which's a problem i faced when i first started coding with node.js.
 
 ## Getting Started
 You can start using zeff structure via multiple ways:
@@ -64,10 +64,12 @@ Project Structure Conventions
     ├── routes                              # folder that has all routes in your app.
     │   └── router.js                       # here you can define the routes and endpoints for the modules you've created.
     │
-    ├── .env_example                        # file that has all the configrations keys of your app like db_name, db_user, your main port all of |                                         these variables and keys.(you must create a `.env` file from this one).   │                                         
+    ├── .env_example                        # file that has all the configrations keys of your app like db_name, db_user, your main port all of |                                         these variables and keys.(you must create a `.env` file from this one). │                                         
+    │
     ├── package.json                        # file of all your app info and dependencies.
     │
     └── ...
+## Readme not finished yet ...
     
     
     
