@@ -17,10 +17,15 @@ OR
 ```
 yarn add zeff.js
 ```
-Of course you'll need to either:
-* run ```npm install``` and it will install all the dependencies needed for project initiation like [express](https://expressjs.com/) `pkg`
-[mongoose](https://mongoosejs.com/) `pkg` [body-parser](https://www.npmjs.com/package/body-parser) `pkg` [dotenv](https://www.npmjs.com/package/dotenv) `pkg`.
-* OR to run ```npm init``` and install all of these packages manually via ```npm install [package_name]```
+Of course you'll see that it's initially install dependencies needed like:
+* [express](https://expressjs.com/) `pkg`
+* [mongoose](https://mongoosejs.com/) `pkg` 
+* [body-parser](https://www.npmjs.com/package/body-parser) `pkg` 
+* [dotenv](https://www.npmjs.com/package/dotenv) `pkg`.
+```
+OR
+```
+* run ```npm init``` and install all of these packages manually via ```npm install [package_name]```
 ### Prerequisites
 * First of all you'll need [node.js](https://nodejs.org/en/download/) installed and running on your machine.
 * Also [MongoDB](https://www.mongodb.com/download-center/community) with its default installation.
