@@ -160,5 +160,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on code of conduct.
 ## License
-see the [LICENSE.md](LICENSE.md) file for details
+see the [MIT](LICENSE) file for details
   
