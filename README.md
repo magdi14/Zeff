@@ -1,7 +1,7 @@
 <img src="https://bit.ly/3aregLh" width="200" height="200">
 
 
-A simple MVC structure with node.js, it makes building REST API's very easy for those guys who have experience in Laravel/Lumen projects structure. also it prevents the developer from writing an unreadable, unstructured, difficult-to-maintain source code `spaghetti-code` which's a problem i faced when i first started coding with node.js.
+A simple MVC structure with node.js, it makes building RESTful API's very handy for those guys who have experience in Laravel/Lumen projects structure. also it prevents the developer from writing an unreadable, unstructured, difficult-to-maintain source code `spaghetti-code` which's a problem i faced when i first started coding with node.js. and it's a good template for a quick start of personal projects.
 
 ## Getting Started
 You can start using zeff structure via multiple ways:
@@ -29,7 +29,7 @@ See this [tutorial](https://www.youtube.com/watch?v=FwMwO8pXfq0) for setting up 
 Project Structure Conventions
 ============================
 > Folders structure options and naming conventions for `zeff`
-### A typical top-level directory layout for zeff
+### A typical top-level directory layout
     .
     ├── ...
     ├── app                                 # app folder (the `main` folder).
@@ -69,14 +69,96 @@ Project Structure Conventions
     ├── package.json                        # file of all your app info and dependencies.
     │
     └── ...
-> Readme not finished yet ...
     
-    
-    
-    
-    
-    
-    
-    
-    
+Documentation
+=============
+## 1- Models
+Here in `mongo` we need to define schemas for our models, and the package we use ``mongoose`` has a very good `docs` provided [here](https://mongoosejs.com/docs/guide.html).
+* First we define the schema with all the properties we want e.g: name, email, etc ...
+```node
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema;  // make instance from mongoose schema
+
+const user = new Schema({
+  name: String,
+  email: { type: String, unique: true }, //specifying email as unique
+  password: String,
+})
+```
+* The the most important part is to export the model with the defined schema as follows:
+```node
+module.exports = mongoose.model("User", user)
+```
+Here the first argument model takes is the name of the model you want, and the second is the schema you've defined.
+### - NOTES
+   * When you insert a new document to the collection the `_id` generated automaticlly by mongoose.
+   * mongoose defines `_id` by default with type `ObjectId` for the collection, but you have the ability to overwrite that but it's not         recommended.
+   * Also if you want to create a `ref` to another collection which called in relational dbs Relations the `_id` should be of type               `ObjectID`.
+   * Visit mongoose [documentations](https://mongoosejs.com/docs/guides.html) for more of definnig schemas, documents, quiries ..
+## 2- Controllers
+* So Controllers is the part which's responsible for do all the logic between the view and the model, it has the CRUD operations and any other logic you want to add, then returns a response to the user even if it's a view `HTML-Files` or a JSON with the data needed which's we concern here.
+* First Thing you want to ``require`` your model you've been created in the models folder to deal with the collection -table- in db.
+> Notice that the collection won't appear in the db you created till you insert a document.
+* Then You will need to export the methods as follows:
+```node
+module.exports = {
+     index: (req, res){
+            // Get all docs from your collection
+     },
+     show: (req, res){
+            // TODO
+     },
+     store: (req, res){
+            // TODO
+     },
+     ...   
+}
+```
+> Future Work: Enhance the controller structure with ES6 classes.
+## 3- Routing
+You will define most of the routes for your application in the `routes/router.js` file, which is loaded by the `app.js` file located in bootstrap. here we're using express.router class to create modular, mountable route handlers.
+```node
+const express = require("express")
+const router = express.Router()
+```
+Then require the controller you want to add its routes here as follows: 
+```node
+const usersCtrl = require("../app/controllers/UsersController")
+```
+Now we're able to defines URI's for this controller doing the logic we have defined.
+```node
+//template
+router.route("{URI}").{request_type}({controller.method})
+
+//Here's an example of the users endpoints.
+router.route("/users").get(usersCtrl.index)
+router.route("/permissions").post(permissionsCtrl.store)
+...
+
+module.exports = router
+```
+> it's not mandatory you can use any structure of defining routes for the application but make sure that you export it and use while app's bootstraping in `app.js` 
+
+## 4- Starting the server
+* As we see the start point of the application is in public folder so to start serving you need to make sure the start script in `package.json` is as ``node ./public/server.js``
+* if you'll use `nodemon` which is i recommend also you'll need to make sure of the start script also.
+* By defining app from bootstrap file we're making an instance of our application and it'll be ready to listen on the port you defined in `.env` file
+```node
+const app = require('../bootstrap/app')
+
+app.listen(process.env.APP_PORT, function(){
+    console.log("Listening on Port " + process.env.APP_PORT)
+});
+```
+> NOTE: if you want to import any of the npm packages you'll need to import it in bootstrap file `app`.
+
+## Adds On
+* There's some additional files and features come with the installation i added for mapping between admins, roles and permissions feel free to ignore them and add your favourite structure or style.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on code of conduct.
+## License
+see the [LICENSE.md](LICENSE.md) file for details
   
