@@ -1,7 +1,7 @@
 {
   "name": "zeff",
   "version": "1.0.0",
-  "description": "A simple structure for MVC with node.js, it makes developing REST API's very easy for those guys who have experience in Laravel/Lumen projects structure.",
+  "description": "A simple MVC structure with node.js, it makes building RESTful API's very handy for those guys who have experience in Laravel/Lumen projects structure. also it prevents the developer from writing an unreadable, unstructured, difficult-to-maintain source code",
   "main": "./public/server.js",
   "dependencies": {
     "body-parser": "1.19.0",
@@ -21,7 +21,7 @@
   },
   "keywords": [
     "express.js",
-    "mongoos",
+    "mongoose",
     "mongodb",
     "MVC",
     "design_pattrens",
