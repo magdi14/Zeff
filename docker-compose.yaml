@@ -1,0 +1,40 @@
+version: '3.1'
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - '.:/opt/zeff'
+    ports:
+      - 9000:9000 # I use port 9000 to run the app
+    environment:
+      NODE_ENV: production
+      APP_PORT: 9000
+      DB_HOST: db
+    networks:
+      - my_net
+
+  # Not recommended to leave the db without a user, but I left it like that for simplicity 
+  db:
+    image: mongo:3.6
+    restart: always
+    ports:
+      - 27018:27017
+    volumes:
+      - mongodb_data_container:/data/db
+    networks:
+      - my_net
+  
+  # A gui to manage db, but I guess doesn't support mongodb yet (it gives you mongodb choice, but doesn't login), I didn't put much time in research.
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8082:8080
+    
+volumes:
+  mongodb_data_container:
+
+networks:
+  my_net:
+    driver: bridge
