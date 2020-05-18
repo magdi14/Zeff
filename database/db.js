@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const db = mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true, useUnifiedTopology: true })
+const db = mongoose.connect(`mongodb://${process.env.DB_HOST}:27017/test`, { useNewUrlParser: true, useUnifiedTopology: true })
 module.exports = db;
 /*
 const mongoose = require('mongoose');
